@@ -8,5 +8,19 @@ public class InsertInBST {
             root = new TreeNode<Integer>(valToInsert);
             return;
         }
+        else {
+            if (valToInsert < root.val) {
+                if (root.left == null) {
+                    root.left = new TreeNode<Integer>(valToInsert);
+                } else {
+                    insert(root.left, valToInsert);
+                }
+                if (root.right == null) {
+                    root.right = new TreeNode<Integer>(valToInsert);
+                } else {
+                    insert(root.right, valToInsert);
+                }
+            }
+        }
     }
 }
