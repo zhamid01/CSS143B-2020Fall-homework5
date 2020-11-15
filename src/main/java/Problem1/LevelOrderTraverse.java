@@ -8,6 +8,9 @@ import java.util.Queue;
 /*
 This site was used as help in this code:
 https://www.geeksforgeeks.org/level-order-traversal-line-line-set-3-using-one-queue/
+
+I used a LinkedList in this code to implement Queue.
+I chose LinkedList as that is something we have used before and I have experience with.
 */
 
 public class LevelOrderTraverse {
