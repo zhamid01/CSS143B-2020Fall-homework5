@@ -34,7 +34,12 @@ public class Problem3Test {
 
     @Test
     public void testInOrderTraverse() {
-        // homework
+        List<BSTTestCase<Integer>> testCases = getBSTTestCases();
+        for (int i = 0; i <testCases.size(); i++) {
+            BSTTestCase<Integer> testCase = testCases.get(i);
+            List<Integer> result = Problem3Test.inOrderTraverse(testCase.tree);
+            assertEquals(testCase.expect, result);
+        }
         // to verify inOrderTraverse(TreeNode<Integer> node)
     }
 
