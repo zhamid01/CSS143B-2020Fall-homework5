@@ -4,9 +4,11 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Problem3Test {
     public static class BSTTestCase<T> {
@@ -34,8 +36,12 @@ public class Problem3Test {
 
     @Test
     public void testInOrderTraverse() {
-        // homework
-        // to verify inOrderTraverse(TreeNode<Integer> node)
+        List<BSTTestCase<Integer>> testCases = getBSTTestCases();
+        for (BSTTestCase<Integer> testCase : testCases) {
+            InsertInBST.insert(testCase.tree, testCase.valueToInsert);
+            List<Integer> result = Problem3Test.inOrderTraverse(testCase.tree);
+            assertEquals(testCase.expect, result);
+        }
     }
 
     private static List<Integer> inOrderTraverse(TreeNode<Integer> node) {
@@ -146,9 +152,9 @@ public class Problem3Test {
         //    N   N
         // homework
         // what problem can you see for insertInBst from this test case?
-        // answer:
+        // answer: There will be no value to the left of the root since the values being inserted are all greater than 1.
         // discuss how you would solve it in a comment below
-        // answer:
+        // answer: You could change the root to be a larger number so that it will allow values to be added to the left of the root.
         root = new TreeNode<>(1);
         testCases.add(new BSTTestCase<>(root, 2, Arrays.asList(1, 2)));
         testCases.add(new BSTTestCase<>(root, 3, Arrays.asList(1, 2, 3)));
