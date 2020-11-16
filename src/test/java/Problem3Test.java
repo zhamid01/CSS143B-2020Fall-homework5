@@ -154,7 +154,7 @@ public class Problem3Test {
         // what problem can you see for insertInBst from this test case?
         // answer: There will be no value to the left of the root since the values being inserted are all greater than 1.
         // discuss how you would solve it in a comment below
-        // answer: You could change the root to be a larger number so that it
+        // answer: You could change the root to be a larger number so that it will allow values to be added to the left of the root.
         root = new TreeNode<>(1);
         testCases.add(new BSTTestCase<>(root, 2, Arrays.asList(1, 2)));
         testCases.add(new BSTTestCase<>(root, 3, Arrays.asList(1, 2, 3)));
